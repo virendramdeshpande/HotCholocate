@@ -15,7 +15,7 @@ builder.Services.AddDbContext<NorthWindContext>(options =>
     options.UseSqlServer(connectionString)); // Or UseSqlite, UsePostgreSQL, etc.
 
 builder.Services
-    .AddGraphQLServer().AddQueryType<MyQuery>();
+    .AddGraphQLServer().AddQueryType<MyQuery>().AddFiltering();
 
 var app = builder.Build();
 
