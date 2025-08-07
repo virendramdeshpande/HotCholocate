@@ -10,7 +10,7 @@ namespace HotCholocate
         
         public  IQueryable<Customer> GetCustomersWithOrders(NorthWindContext context, string custId)
         {
-            return context.Customers.Where(x => x.CustomerId == custId).Include(c => c.Orders).ThenInclude(d=>d.OrderDetails);
+            return context.Customers.Where(x => x.CustomerId == custId).Include(o => o.Orders).ThenInclude(d=>d.OrderDetails);
         }
 
         public IQueryable<Order> GetOrders(NorthWindContext context)
